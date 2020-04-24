@@ -65,11 +65,11 @@ namespace DatingApp.API.Controllers
                 SigningCredentials = creds
             };
 
-            var tockenHandler = new JwtSecurityTokenHandler();
-            var tocken = tockenHandler.CreateToken(tokenDescriptor);
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var token = tokenHandler.CreateToken(tokenDescriptor);
 
             return Ok(new {
-                token = tockenHandler.WriteToken(tocken)
+                token = tokenHandler.WriteToken(token)
             });
         }
     }
